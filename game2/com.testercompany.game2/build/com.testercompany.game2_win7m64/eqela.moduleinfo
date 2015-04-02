@@ -1,0 +1,11 @@
+ldflags: -lcom.eqela.libmodaldialog -lcom.eqela.libmobilewidget -lcom.eqela.libdialogwidget -lcom.eqela.libwindowframewidget -lcom.eqela.libtextinputwidget -lcom.eqela.libcommonwidget -lcom.eqela.libscrollerwidget -lcom.eqela.libpopupwidget -lcom.eqela.libwidget -lcom.eqela.libguiengine -lcom.eqela.libdirect2dgui -lcom.eqela.libvg -lcom.eqela.libwin32gui -lcom.eqela.libeventloop -lcom.eqela.libgui -lcom.eqela.libbackgroundtask -lcom.eqela.libos -lcom.eqela.libstringutil -lcom.eqela.libio -leq.api -L. -static-libstdc++ -static-libgcc -mwindows -lgdiplus -ld2d1 -lwindowscodecs -ldwrite -lgdi32 -lole32 -lws2_32
+depends: eq.api,com.eqela.libio,com.eqela.libos,com.eqela.libguiengine,com.eqela.libgui,com.eqela.libwidget,com.eqela.libwidget,com.eqela.libcommonwidget,com.eqela.libmobilewidget,com.eqela.libmodaldialog,com.eqela.libdialogwidget,com.eqela.libwidget,com.eqela.libcommonwidget,com.eqela.libmobilewidget,com.eqela.libmodaldialog,com.eqela.libdialogwidget
+moduletype: widgetapplication
+platform: win7m64
+url: 
+license: 
+copyright: 
+version: 1.0.0
+description: 
+displayname: game2
+id: com.testercompany.game2

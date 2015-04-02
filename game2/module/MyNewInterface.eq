@@ -1,0 +1,8 @@
+
+//
+// MyNewInterface
+//
+
+public interface MyNewInterface
+{
+}
