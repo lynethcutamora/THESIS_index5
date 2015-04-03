@@ -1,0 +1,8 @@
+
+#
+# Project configuration file for
+# minion
+
+projectname: minion
+vendorid: com.minion.jason
+mainmodule: com.minion.jason.minion

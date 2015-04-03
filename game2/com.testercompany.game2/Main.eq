@@ -7,11 +7,16 @@
 // make your actual application.
 //
 
+
+
 public class Main : MobileApplicationControllerWidget
 {
 	// AboutAction: An event handler that executes when the user selects the
 	// "About the application" menu entry
-
+	public FrameController create_main_scene() {
+		return (new SecondScreenWidget());
+	}
+	
 	class AboutAction : Executable
 	{
 		public void execute() {
@@ -54,10 +59,16 @@ public class Main : MobileApplicationControllerWidget
 			box.add_box(1, LabelWidget.for_string("Welcome")
 				.set_font(Theme.font().modify("10mm bold color=#802222")));
 			box.add_box(0, ButtonWidget.for_string("Single Player")
-				.set_color(Color.instance("#80FF80")).set_event("continue"));
+				.set_color(Color.instance("#1E00FF")).set_event("continue"));
 			add(box);
 		
-			
+			var box1 = BoxWidget.vertical();
+			box.set_margin(px("1mm"));
+			box.set_spacing(px("2mm"));
+
+			box.add_box(0, ButtonWidget.for_string("Multiplayer")
+				.set_color(Color.instance("#1E00FF")).set_event("continue1"));
+			add(box1);
 		
 		}
 
@@ -73,6 +84,9 @@ public class Main : MobileApplicationControllerWidget
 			if("continue".equals(o)) {
 				push_screen(new SecondScreenWidget());
 			}
+			else if("continue1".equals(o)) {
+				push_screen(new Multiplayer());
+			}
 		}
 	}
 
@@ -87,6 +101,39 @@ public class Main : MobileApplicationControllerWidget
 
 		public Object get_mobile_app_title() {
 			return("Single Player");
+		}
+
+		// The menu on the top right corner of the window is populated from the data
+		// supplied by this method.
+
+
+		// Construct a simple user interface with a blue gradient background
+
+		public void initialize() {
+			base.initialize();
+			add(CanvasWidget.for_color_gradient(Color.instance("#8080FF")));
+		}
+
+		public void cleanup() {
+			base.cleanup();
+		}
+
+		// If the "back" event is received (from the menu, as shown above), then go
+		// back to the previous screen.
+
+		public void on_event(Object o) {
+			if("back".equals(o)) {
+				pop_screen();
+			}
+		}
+	}
+	class Multiplayer : MobileApplicationScreenWidget
+	{
+	
+		// The title as shown in the title bar. Return null to remove the title bar.
+
+		public Object get_mobile_app_title() {
+			return("Multiplayer");
 		}
 
 		// The menu on the top right corner of the window is populated from the data
